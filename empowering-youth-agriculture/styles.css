@@ -325,3 +325,91 @@ html, body {
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
+/* ================================================================
+   STATS SECTION – floating cards
+   ================================================================ */
+.stats-section {
+    background: var(--white);
+    padding: var(--spacing-2xl) 0;
+    margin-top: -40px;          /* Overlap hero slightly */
+    position: relative;
+    z-index: 2;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.stat-item {
+    background: var(--bg-light);
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(106, 176, 76, 0.08);
+}
+
+.stat-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-light);
+}
+
+.stat-number {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.1;
+    display: block;
+}
+
+.stat-number .percent {
+    font-size: 2.4rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #3d5a3d;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* ================================================================
+   MISSION SECTION
+   ================================================================ */
+.mission-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-light);
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.mission-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: #2d3d2d;
+}
