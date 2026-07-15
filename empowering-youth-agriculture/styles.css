@@ -708,4 +708,41 @@ html, body {
     .hero-image-placeholder {
         padding: 0.6rem;
     }
+
+    /* Milestone Section using Flexbox */
+.milestone-section { 
+    padding: 4rem 0; 
+    background-color: #f9f9f9; 
+}
+
+.milestone-grid {
+    display: flex;             /* Enables Flexbox */
+    flex-wrap: wrap;           /* Allows items to move to the next line on small screens */
+    gap: 2rem;                 /* Creates consistent spacing between cards */
+    justify-content: center;   /* Centers the cards if there's extra space */
+    margin-top: 2rem;
+}
+
+.milestone-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+    /* Flexbox sizing: 
+       flex: 1 1 250px; 
+       1 (grow): cards fill empty space
+       1 (shrink): cards shrink if container is too small
+       250px (basis): preferred starting width
+    */
+    flex: 1 1 250px; 
+    max-width: 300px; /* Prevents cards from getting too wide on desktop */
+}
+
+/* Ensure container handles centering properly */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 }
