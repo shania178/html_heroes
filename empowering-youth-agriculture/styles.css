@@ -1,0 +1,30 @@
+/* ================================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ================================================================ */
+:root {
+    /* Primary colours – rich earthy greens */
+    --primary:       #1a4a2a;
+    --primary-light: #2d6f3e;
+    --primary-dark:  #0f2e1a;
+    --accent:        #6ab04c;
+    --accent-light:  #8bc66a;
+    --accent-lighter: #d4edc9;
+    --gold:          #f6b93b;
+    --bg-light:      #f0f7ee;
+    --white:         #ffffff;
+    --text-dark:     #1a2a1a;
+    --text-light:    #f5faf4;
+    --shadow:        0 12px 40px rgba(0, 0, 0, 0.12);
+    --shadow-hover:  0 20px 60px rgba(0, 0, 0, 0.18);
+
+    /* Spacing */
+    --spacing-xs:  0.25rem;
+    --spacing-sm:  0.5rem;
+    --spacing-md:  1rem;
+    --spacing-lg:  2rem;
+    --spacing-xl:  4rem;
+    --spacing-2xl: 6rem;
+
+    /* Typography */
+    --font-base: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
