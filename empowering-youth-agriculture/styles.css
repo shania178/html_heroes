@@ -53,3 +53,275 @@ html, body {
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
+/* ================================================================
+   HEADER & NAVIGATION – clean & transparent
+   ================================================================ */
+.site-header {
+    position: absolute;     /* Overlays the hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.8rem 0;
+    background: rgba(26, 74, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.primary-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s, color 0.25s;
+}
+
+.primary-nav a:hover {
+    color: var(--white);
+    border-bottom-color: var(--accent-light);
+}
+
+.primary-nav a.active {
+    color: var(--white);
+    border-bottom-color: var(--gold);
+}
+
+/* Mobile toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* ================================================================
+   HERO – FULL VIEWPORT HEIGHT
+   ================================================================ */
+.hero {
+    min-height: 100vh;           /* Full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #0f2e1a 0%, #1a4a2a 30%, #2d6f3e 70%, #3d8a52 100%);
+    padding: 120px 0 80px;       /* Top padding for nav */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle decorative background elements */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(106, 176, 76, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(246, 185, 59, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-2xl);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Left content */
+.hero-content {
+    flex: 1 1 50%;
+    color: var(--white);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--accent-lighter);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    color: var(--white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-title span {
+    color: var(--gold);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.92;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--primary-dark);
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(246, 185, 59, 0.3);
+}
+
+.btn-primary:hover {
+    background: #f7c452;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(246, 185, 59, 0.45);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Right visual */
+.hero-visual {
+    flex: 1 1 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image-placeholder {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    display: inline-block;
+    width: 100%;
+    max-width: 480px;
+}
+
+.hero-image-placeholder:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-image-placeholder img,
+.hero-image-placeholder svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.hero-caption {
+    margin-top: var(--spacing-md);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 1.8rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
