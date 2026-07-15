@@ -28,3 +28,28 @@
     /* Typography */
     --font-base: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--font-base);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
