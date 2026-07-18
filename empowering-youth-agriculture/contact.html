@@ -4,34 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Heroes – Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="darkmode.css?v=2" />
     <!-- Reuse the same styles as the original page, with contact-specific additions -->
     <style>
-        /* ----- reset & base (matches original) ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-            background: #f9fbf8;
-            color: #1a2e2a;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ----- header / nav (mirror original) ----- */
+        /* ----- header / nav ----- */
         .site-header {
             background: #14312b;
             color: #eaf3ed;
             padding: 0.8rem 0;
             box-shadow: 0 4px 10px rgba(0, 20, 10, 0.08);
+            position: relative;
         }
 
         .nav-container {
@@ -53,6 +36,7 @@
             display: flex;
             gap: 1.8rem;
             list-style: none;
+            align-items: center;
         }
 
         .primary-nav a {
@@ -377,6 +361,75 @@
                 flex-direction: column;
             }
         }
+
+        /* dark mode overrides – contact-specific elements */
+        body.dark-mode .page-hero {
+            background: linear-gradient(135deg, #141f17 0%, #1a2e20 100%);
+        }
+
+        body.dark-mode .page-hero h1 {
+            color: #e6f0e2;
+        }
+
+        body.dark-mode .page-hero p {
+            color: #a7d2a0;
+        }
+
+        body.dark-mode .contact-wrapper {
+            background: #1c3021;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .contact-info h2 {
+            color: #e6f0e2;
+        }
+
+        body.dark-mode .contact-info p {
+            color: #a7d2a0;
+        }
+
+        body.dark-mode .contact-details {
+            background: #141f17;
+            border-left-color: #5f9f65;
+        }
+
+        body.dark-mode .contact-details li {
+            color: #c5d9c0;
+        }
+
+        body.dark-mode .contact-form legend {
+            color: #e6f0e2;
+            border-bottom-color: #2a4a30;
+        }
+
+        body.dark-mode .form-group label {
+            color: #a7d2a0;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group select,
+        body.dark-mode .form-group textarea {
+            background: #141f17;
+            border-color: #2a4a30;
+            color: #e6f0e2;
+        }
+
+        body.dark-mode .form-group input::placeholder,
+        body.dark-mode .form-group textarea::placeholder {
+            color: #6a8a6a;
+        }
+
+        body.dark-mode .form-group.invalid input,
+        body.dark-mode .form-group.invalid select,
+        body.dark-mode .form-group.invalid textarea {
+            background: #2a1418;
+        }
+
+        body.dark-mode .form-group.valid input,
+        body.dark-mode .form-group.valid select,
+        body.dark-mode .form-group.valid textarea {
+            background: #141f17;
+        }
     </style>
 </head>
 <body data-page="contact">
@@ -389,10 +442,15 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="program.html">Program</a></li>
-                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="mission.html">Mission</a></li>
                     <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
+                    <li>
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -536,8 +594,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="program.html">Our Program</a></li>
-                    <li><a href="impact.html">Our Impact</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
                     <li><a href="team.html">Meet the Team</a></li>
                 </ul>
             </div>
@@ -553,6 +610,7 @@
     </footer>
 
     <!-- ===== VALIDATION SCRIPT (re‑aligned with contact part) ===== -->
+    <script src="darkmode.js?v=2"></script>
     <script>
         (function() {
             "use strict";

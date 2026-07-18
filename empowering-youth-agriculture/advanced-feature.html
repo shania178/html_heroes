@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Feature – CSS-Variable Driven Theme Toggle</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="darkmode.css?v=2" />
+    <style>
+        .feature-hero {
+            padding: 8rem 0 3rem;
+            text-align: center;
+            background: var(--hero-gradient);
+            color: var(--white);
+        }
+
+        .feature-hero .section-label { color: var(--accent-lighter); }
+        .feature-hero .section-title { color: var(--white); }
+
+        .feature-hero-desc {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .feature-section {
+            padding: var(--spacing-2xl) 0;
+            background: var(--bg);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .demo-panel {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .demo-panel h2 {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .var-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .var-table th,
+        .var-table td {
+            text-align: left;
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .var-table th {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+        }
+
+        .var-table td:first-child {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .var-table td:last-child {
+            color: var(--text-muted);
+        }
+
+        .color-swatch {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-demo-area {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .toggle-demo-area p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: #0f2e1a;
+            color: #a7d2a0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            white-space: pre;
+        }
+
+        .code-block .kw  { color: #f6b93b; }
+        .code-block .sel { color: #8bc66a; }
+        .code-block .val { color: #ecf2e9; }
+        .code-block .cmt { color: #5a7a5a; }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .demo-panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body data-page="advanced">
+
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">HTML Heroes</a>
+            <nav class="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="feature-hero">
+            <div class="container">
+                <span class="section-label">ADVANCED FEATURE</span>
+                <h1 class="section-title">CSS-Variable Driven Theme Toggle</h1>
+                <p class="feature-hero-desc">
+                    A single checkbox switch reassigns CSS custom properties at the
+                    <code>body</code> level — every component on the page updates
+                    automatically with zero per-element overrides for standard elements.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>1. Define Variables in :root</h3>
+                        <p>
+                            Light-theme values are declared once on <code>:root</code>.
+                            Every component references <code>var(--bg)</code>,
+                            <code>var(--surface)</code>, <code>var(--text)</code>, etc.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>2. Reassign in body.dark-mode</h3>
+                        <p>
+                            When the toggle adds the <code>.dark-mode</code> class,
+                            the same variables are reassigned to dark values.
+                            All components update automatically — no extra selectors needed.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3. Persist with localStorage</h3>
+                        <p>
+                            The user's preference is saved in <code>localStorage</code>
+                            and restored on page load, so the theme survives navigation
+                            and browser restarts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LIVE DEMO ===== -->
+        <section class="feature-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="demo-panel">
+                    <h2>Live Variable Inspector</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                        Toggle the switch above to watch these values change in real time.
+                    </p>
+
+                    <table class="var-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Current Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>--bg</td>
+                                <td><span class="color-swatch" style="background: var(--bg);"></span> var(--bg)</td>
+                            </tr>
+                            <tr>
+                                <td>--surface</td>
+                                <td><span class="color-swatch" style="background: var(--surface);"></span> var(--surface)</td>
+                            </tr>
+                            <tr>
+                                <td>--text</td>
+                                <td><span class="color-swatch" style="background: var(--text);"></span> var(--text)</td>
+                            </tr>
+                            <tr>
+                                <td>--accent</td>
+                                <td><span class="color-swatch" style="background: var(--accent);"></span> var(--accent)</td>
+                            </tr>
+                            <tr>
+                                <td>--gold</td>
+                                <td><span class="color-swatch" style="background: var(--gold);"></span> var(--gold)</td>
+                            </tr>
+                            <tr>
+                                <td>--card-bg</td>
+                                <td><span class="color-swatch" style="background: var(--card-bg);"></span> var(--card-bg)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="toggle-demo-area">
+                        <p>This box uses <code>var(--bg)</code> and <code>var(--border)</code> — it adapts automatically.</p>
+                        <label class="theme-switch" for="theme-toggle-2">
+                            <input type="checkbox" id="theme-toggle-2" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="code-block"><span class="cmt">/* Light mode — :root */</span>
+<span class="sel">:root</span> {
+  <span class="kw">--bg</span>:      <span class="val">#f0f7ee</span>;
+  <span class="kw">--surface</span>: <span class="val">#ffffff</span>;
+  <span class="kw">--text</span>:    <span class="val">#1a2a1a</span>;
+}
+
+<span class="cmt">/* Dark mode — same variables, new values */</span>
+<span class="sel">body.dark-mode</span> {
+  <span class="kw">--bg</span>:      <span class="val">#111c11</span>;
+  <span class="kw">--surface</span>: <span class="val">#1c3021</span>;
+  <span class="kw">--text</span>:    <span class="val">#ecf2e9</span>;
+}</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>HTML Heroes</h3>
+                <p>Empowering youth in Northern Ghana with climate-resilient agribusiness skills for sustainable livelihoods.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 Mauritius</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HTML Heroes. All rights reserved.</p>
+            <p class="footer-credits">Breaking the chain of unemployment through agriculture.</p>
+        </div>
+    </footer>
+
+    <script src="darkmode.js?v=2"></script>
+    <script>
+        /* Sync the second toggle with the same dark-mode class */
+        const toggle2 = document.getElementById("theme-toggle-2");
+        if (toggle2) {
+            if (document.body.classList.contains("dark-mode")) {
+                toggle2.checked = true;
+            }
+            toggle2.addEventListener("change", () => {
+                if (toggle2.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("theme", "light");
+                }
+                /* Sync the nav toggle too */
+                const navToggle = document.getElementById("theme-toggle");
+                if (navToggle) navToggle.checked = toggle2.checked;
+            });
+        }
+    </script>
+</body>
+</html>

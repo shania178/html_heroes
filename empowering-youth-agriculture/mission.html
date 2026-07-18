@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Mission – HTML Heroes</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="darkmode.css?v=2" />
 </head>
 <body data-page="mission">
 
@@ -17,14 +18,16 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="mission.html" class="active">Mission</a></li>
-                    <li><a href="impact.html">Impact</a></li>
                     <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </header>
 
@@ -71,9 +74,31 @@
 
     <!-- ===== FOOTER (Consistent with Landing Page) ===== -->
     <footer class="site-footer">
-        <!-- Footer content remains the same as your provided landing page -->
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>HTML Heroes</h3>
+                <p>Empowering youth in Northern Ghana with climate-resilient agribusiness skills for sustainable livelihoods.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 Mauritius</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HTML Heroes. All rights reserved.</p>
+            <p class="footer-credits">Breaking the chain of unemployment through agriculture.</p>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="darkmode.js?v=2"></script>
 </body>
 </html>

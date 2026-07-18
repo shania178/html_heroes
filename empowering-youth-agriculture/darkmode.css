@@ -56,61 +56,37 @@ body.dark-mode .theme-switch .switch-slider::before {
 }
 
 /* ================================================================
-   DARK MODE STYLES
+   DARK MODE – CSS-VARIABLE DRIVEN
+   Reassigns theme variables so every component updates automatically.
    ================================================================ */
 body.dark-mode {
-    background-color: #111c11;
-    color: #ecf2e9;
+    --bg:            #111c11;
+    --surface:       #141f17;
+    --text:          #ecf2e9;
+    --text-muted:    #c5d9c0;
+    --border:        rgba(106, 176, 76, 0.15);
+    --shadow:        0 12px 40px rgba(0, 0, 0, 0.35);
+    --shadow-hover:  0 20px 60px rgba(0, 0, 0, 0.5);
+    --header-bg:     rgba(12, 35, 16, 0.92);
+    --header-border: rgba(255, 255, 255, 0.06);
+    --card-bg:       #1c3021;
+    --card-border:   #2a4a30;
+    --hero-gradient: linear-gradient(145deg, #102916 0%, #173b24 35%, #1f5c37 70%, #2c7c4b 100%);
+    --cta-gradient:  linear-gradient(145deg, #0e1a14, #132118);
 }
 
-body.dark-mode .site-header {
-    background-color: rgba(12, 35, 16, 0.9);
+/* Accent / gold stay vivid in dark mode */
+body.dark-mode {
+    --accent:        #8bc66a;
+    --accent-light:  #a7d2a0;
+    --accent-lighter: #d4edc9;
+    --gold:          #f6b93b;
+    --primary:       #a7d2a0;
+    --primary-light: #c5e8c0;
+    --primary-dark:  #e0f5dc;
 }
 
-body.dark-mode .hero {
-    background: linear-gradient(145deg, #102916 0%, #173b24 35%, #1f5c37 70%, #2c7c4b 100%);
-}
-
-body.dark-mode .mission-section {
-    background-color: #141f17;
-    color: #e6f0e2;
-}
-
-body.dark-mode .mission-content {
-    background-color: rgba(23, 42, 27, 0.98);
-    padding: 2rem;
-    border-radius: 18px;
-}
-
-body.dark-mode .mission-content, body.dark-mode .mission-content * {
-    color: #ebf3e5 !important;
-}
-
-body.dark-mode .section-title {
-    color: #f4fbf0 !important;
-}
-
-body.dark-mode .mission-text {
-    color: #dbe8d7 !important;
-}
-
-body.dark-mode .section-label {
-    color: #a7d2a0 !important;
-}
-
-body.dark-mode .stats-section {
-    background-color: #111d14;
-}
-
-body.dark-mode .stat-item {
-    background-color: #1c3021;
-    color: #f4f7ef;
-}
-
-body.dark-mode .cta-section {
-    background-color: #132118;
-}
-
+/* Page-specific overrides that can't be covered by variables alone */
 body.dark-mode .site-footer {
     background-color: #0e140e;
 }
@@ -126,4 +102,73 @@ body.dark-mode .btn-primary {
 body.dark-mode .btn-outline {
     border-color: #b4d9b0;
     color: #b4d9b0;
+}
+
+body.dark-mode .cta-section h2,
+body.dark-mode .cta-section p {
+    color: #f4fbf0;
+}
+
+body.dark-mode .section-title {
+    color: #f4fbf0;
+}
+
+body.dark-mode .section-label {
+    color: #a7d2a0;
+}
+
+body.dark-mode .mission-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .mission-card h2 {
+    color: #a7d2a0;
+}
+
+body.dark-mode .mission-card p {
+    color: #c5d9c0;
+}
+
+body.dark-mode .problem-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .problem-card h3 {
+    color: #e6f0e2;
+}
+
+body.dark-mode .problem-card p {
+    color: #a7d2a0;
+}
+
+body.dark-mode .solution-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .solution-card h3 {
+    color: #a7d2a0;
+}
+
+body.dark-mode .solution-card ul li {
+    color: #c5d9c0;
+}
+
+body.dark-mode .section-header p {
+    color: #a7d2a0;
+}
+
+body.dark-mode .team-name {
+    color: #a7d2a0;
+}
+
+body.dark-mode .gallery-img {
+    background-color: #141f17;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .gallery-overlay {
+    background: linear-gradient(to top, rgba(14, 26, 18, 0.92) 0%, rgba(14, 26, 18, 0.4) 50%, transparent 100%);
 }
