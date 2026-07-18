@@ -402,7 +402,7 @@ html, body {
 
 .section-title {
     font-size: 2.8rem;
-    color: var(--primary-dark);
+    color: var(--primary-light);
     margin-bottom: var(--spacing-md);
     line-height: 1.2;
 }
@@ -411,7 +411,7 @@ html, body {
     font-size: 1.15rem;
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
-    color: #2d3d2d;
+    color: #2f3b2f;
 }
 /* ================================================================
    CALL TO ACTION
