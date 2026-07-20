@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Heroes – Contact</title>
+    <title>Heroes – Contact</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="darkmode.css?v=2" />
     <!-- Reuse the same styles as the original page, with contact-specific additions -->
@@ -434,10 +434,11 @@
 </head>
 <body data-page="contact">
 
-    <!-- ===== HEADER (exactly as original) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="site-header">
         <div class="container nav-container">
-            <a href="index.html" class="brand">HTML Heroes</a>
+            <!-- CHANGED: HTML Heroes → Heroes -->
+            <a href="index.html" class="brand">Heroes</a>
             <nav class="primary-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -462,10 +463,10 @@
     <main>
         <!-- ===== CONTACT PAGE HERO ===== -->
         <section class="page-hero">
-            <h1>Join the Movement</h1>
+            <h1>Join us in this mission</h1>
             <p>
-                Whether you want to volunteer, partner, or learn more — 
-                we'd love to hear from you.
+                Whether you want to volunteer, partner, or learn more  
+                welcome to reach out. Together, we can empower youth and transform communities through sustainable agriculture.
             </p>
         </section>
 
@@ -480,9 +481,9 @@
                         grow a sustainable future together.
                     </p>
                     <ul class="contact-details">
-                        <li>📍 Nairobi, Kenya</li>
-                        <li>📧 youth@htmlheroes.org</li>
-                        <li>📞 +1 (555) 234-5678</li>
+                        <li>📍 Mauritius , pamplemousses</li>
+                        <li>📧 youth@heroes.org</li>
+                        <li>📞 +230 571 79127</li>
                     
                     </ul>
                 </div>
@@ -506,7 +507,7 @@
                             <span class="success-message">✓ Looks good!</span>
                         </div>
 
-                        <!-- Email -->
+                        <!-- ===== FIX 1: EMAIL with proper validation ===== -->
                         <div class="form-group" id="email-group">
                             <label for="email">Email Address <span class="required">*</span></label>
                             <input 
@@ -514,39 +515,42 @@
                                 id="email" 
                                 name="email" 
                                 placeholder="you@example.com"
+                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                                 required
                             />
-                            <span class="error-message">⚠️ Please enter a valid email address</span>
+                            <span class="error-message">⚠️ Please enter a valid email address (e.g., name@domain.com)</span>
                             <span class="success-message">✓ Valid email</span>
                         </div>
 
-                        <!-- Phone (International format) -->
+                        <!-- ===== FIX 2: PHONE accepts + and 8-15 digits ===== -->
                         <div class="form-group" id="phone-group">
                             <label for="phone">Phone Number <span class="required">*</span></label>
                             <input 
                                 type="tel" 
                                 id="phone" 
                                 name="phone" 
-                                placeholder="1234567890"
-                                pattern="^[0-9]{10,15}$"
+                                placeholder="+23057179127"
+                                pattern="^\+?[0-9]{8,15}$"
+                                title="Enter 8-15 digits, optionally starting with +"
                                 required
                             />
-                            <span class="error-message">⚠️ Phone must contain 10–15 digits only</span>
+                            <span class="error-message">⚠️ Phone must contain 8–15 digits (optional + allowed)</span>
                             <span class="success-message">✓ Valid phone number</span>
                         </div>
 
-                        <!-- Reference Code (ABC-1234 format) -->
+                        <!-- ===== FIX 3: REFERENCE Heroes_0000 format ===== -->
                         <div class="form-group" id="ref-group">
                             <label for="reference">Reference Code <span class="required">*</span></label>
                             <input 
                                 type="text" 
                                 id="reference" 
                                 name="reference" 
-                                placeholder="ABC-1234"
-                                pattern="^[A-Z]{3}-[0-9]{4}$"
+                                placeholder="Heroes_0001"
+                                pattern="^[A-Za-z]+_[0-9]{4}$"
+                                title="Format: Heroes_0000 (e.g., Heroes_1234)"
                                 required
                             />
-                            <span class="error-message">⚠️ Format must be ABC-1234 (e.g., FARM-2025)</span>
+                            <span class="error-message">⚠️ Format must be Heroes_0000 (e.g., Heroes_1234)</span>
                             <span class="success-message">✓ Valid reference code</span>
                         </div>
 
@@ -583,11 +587,12 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER (exactly as original) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <h3>HTML Heroes</h3>
+                <!-- CHANGED: HTML Heroes → Heroes -->
+                <h3>Heroes</h3>
                 <p>Empowering youth in Northern Ghana with climate-resilient agribusiness skills for sustainable livelihoods.</p>
             </div>
             <div class="footer-links">
@@ -604,12 +609,13 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 HTML Heroes. All rights reserved.</p>
+            <!-- CHANGED: HTML Heroes → Heroes -->
+            <p>&copy; 2026 Heroes. All rights reserved.</p>
             <p class="footer-credits">Breaking the chain of unemployment through agriculture.</p>
         </div>
     </footer>
 
-    <!-- ===== VALIDATION SCRIPT (re‑aligned with contact part) ===== -->
+    <!-- ===== VALIDATION SCRIPT ===== -->
     <script src="darkmode.js?v=2"></script>
     <script>
         (function() {
@@ -617,37 +623,62 @@
 
             const form = document.getElementById('contact-form');
 
+            // --- Email validation with proper domain ---
+            function isValidEmail(value) {
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return emailPattern.test(value.trim());
+            }
+
+            // --- Phone validation (optional +, 8-15 digits) ---
+            function isValidPhone(value) {
+                const phonePattern = /^\+?[0-9]{8,15}$/;
+                return phonePattern.test(value.trim());
+            }
+
+            // --- Reference validation (Text_0000) ---
+            function isValidReference(value) {
+                const refPattern = /^[A-Za-z]+_[0-9]{4}$/;
+                return refPattern.test(value.trim());
+            }
+
             function validateField(input) {
                 const group = input.closest('.form-group');
                 if (!group) return false;
 
                 let isValid = true;
+                const value = input.value.trim();
                 const required = input.hasAttribute('required');
 
-                if (input.type === 'email') {
-                    isValid = input.validity.valid && input.value.trim() !== '';
+                if (value === '' && !required) {
+                    group.classList.remove('invalid', 'valid');
+                    return true;
+                }
+
+                // Use specific validation functions
+                if (input.id === 'email') {
+                    isValid = isValidEmail(value);
+                } else if (input.id === 'phone') {
+                    isValid = isValidPhone(value);
+                } else if (input.id === 'reference') {
+                    isValid = isValidReference(value);
+                } else if (input.type === 'text' && required) {
+                    isValid = value !== '';
                 } else if (input.pattern) {
                     const pattern = new RegExp(input.pattern);
-                    isValid = pattern.test(input.value.trim()) && input.value.trim() !== '';
+                    isValid = pattern.test(value);
                 } else if (required) {
-                    isValid = input.value.trim() !== '';
+                    isValid = value !== '';
                 } else {
                     isValid = true;
                 }
 
-                if (input.id === 'reference') {
-                    const pattern = /^[A-Z]{3}-[0-9]{4}$/;
-                    isValid = pattern.test(input.value.trim()) && input.value.trim() !== '';
+                group.classList.remove('invalid', 'valid');
+                if (!isValid && value !== '') {
+                    group.classList.add('invalid');
+                } else if (isValid && value !== '') {
+                    group.classList.add('valid');
                 }
 
-                group.classList.remove('invalid', 'valid');
-                if (required || input.type === 'email' || input.pattern || input.id === 'reference') {
-                    if (!isValid && input.value.trim() !== '') {
-                        group.classList.add('invalid');
-                    } else if (isValid && input.value.trim() !== '') {
-                        group.classList.add('valid');
-                    }
-                }
                 return isValid;
             }
 
@@ -664,29 +695,33 @@
 
                 fields.forEach(input => {
                     const group = input.closest('.form-group');
+                    const value = input.value.trim();
                     let isValid = false;
 
-                    if (input.type === 'email') {
-                        isValid = input.validity.valid && input.value.trim() !== '';
+                    if (input.id === 'email') {
+                        isValid = isValidEmail(value);
+                    } else if (input.id === 'phone') {
+                        isValid = isValidPhone(value);
+                    } else if (input.id === 'reference') {
+                        isValid = isValidReference(value);
                     } else if (input.pattern) {
                         const pattern = new RegExp(input.pattern);
-                        isValid = pattern.test(input.value.trim()) && input.value.trim() !== '';
+                        isValid = pattern.test(value);
                     } else {
-                        isValid = input.value.trim() !== '';
+                        isValid = value !== '';
                     }
 
-                    if (input.id === 'reference') {
-                        const pattern = /^[A-Z]{3}-[0-9]{4}$/;
-                        isValid = pattern.test(input.value.trim()) && input.value.trim() !== '';
-                    }
-
-                    if (!isValid) {
+                    group.classList.remove('invalid', 'valid');
+                    if (!isValid && value !== '') {
                         group.classList.add('invalid');
-                        group.classList.remove('valid');
                         allValid = false;
-                    } else {
-                        group.classList.remove('invalid');
+                    } else if (isValid && value !== '') {
                         group.classList.add('valid');
+                    } else if (value === '' && !input.hasAttribute('required')) {
+                        // optional field, no validation
+                    } else if (value === '' && input.hasAttribute('required')) {
+                        group.classList.add('invalid');
+                        allValid = false;
                     }
                 });
 
@@ -721,55 +756,16 @@
                 const inputs = form.querySelectorAll('input, select');
                 inputs.forEach(input => {
                     input.addEventListener('blur', function() {
-                        const group = this.closest('.form-group');
-                        if (!group) return;
-                        if (this.tagName === 'SELECT') {
-                            if (this.value !== '') {
-                                group.classList.remove('invalid');
-                                group.classList.add('valid');
-                            } else {
-                                group.classList.remove('valid', 'invalid');
-                            }
-                            return;
-                        }
-                        const required = this.hasAttribute('required');
-                        let isValid = false;
-                        if (this.type === 'email') {
-                            isValid = this.validity.valid && this.value.trim() !== '';
-                        } else if (this.pattern) {
-                            const pattern = new RegExp(this.pattern);
-                            isValid = pattern.test(this.value.trim()) && this.value.trim() !== '';
-                        } else if (required) {
-                            isValid = this.value.trim() !== '';
-                        } else {
-                            isValid = true;
-                        }
-                        if (this.id === 'reference') {
-                            const pattern = /^[A-Z]{3}-[0-9]{4}$/;
-                            isValid = pattern.test(this.value.trim()) && this.value.trim() !== '';
-                        }
-                        if (this.value.trim() === '' && !required) {
-                            group.classList.remove('invalid', 'valid');
-                            return;
-                        }
-                        if (!isValid) {
-                            group.classList.add('invalid');
-                            group.classList.remove('valid');
-                        } else {
-                            group.classList.remove('invalid');
-                            group.classList.add('valid');
-                        }
+                        validateField(this);
                     });
 
                     input.addEventListener('input', function() {
-                        const group = this.closest('.form-group');
-                        if (!group) return;
-                        if (this.value.trim() === '' && !this.hasAttribute('required')) {
-                            group.classList.remove('invalid', 'valid');
-                            return;
+                        if (this.value.trim() !== '' || this.hasAttribute('required')) {
+                            validateField(this);
+                        } else {
+                            const group = this.closest('.form-group');
+                            if (group) group.classList.remove('invalid', 'valid');
                         }
-                        const blurEvent = new Event('blur');
-                        this.dispatchEvent(blurEvent);
                     });
                 });
             }
