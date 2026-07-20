@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ – HTML Heroes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="darkmode.css?v=2" />
+    <style>
+        .faq-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, rgba(45, 106, 79, 0.05), rgba(82, 183, 136, 0.08));
+            text-align: center;
+        }
+
+        .faq-hero .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-categories {
+            padding: var(--spacing-2xl) 0;
+            background: var(--bg);
+        }
+
+        .faq-category {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            margin-bottom: 0.8rem;
+            background: var(--card-bg);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .faq-input {
+            display: none;
+        }
+
+        .faq-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+            gap: 1rem;
+            transition: color 0.2s;
+        }
+
+        .faq-label:hover {
+            color: var(--accent);
+        }
+
+        .faq-label::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(106, 176, 76, 0.08);
+        }
+
+        .faq-input:checked + .faq-label::after {
+            content: '−';
+            transform: rotate(180deg);
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .faq-input:checked + .faq-label {
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-input:checked ~ .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.4rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .faq-cta {
+            text-align: center;
+            padding: var(--spacing-xl) 0 var(--spacing-2xl);
+            background: var(--bg);
+        }
+
+        .faq-cta p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body data-page="faq">
+
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">Heroes</a>
+            <nav class="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== FAQ HERO ===== -->
+        <section class="faq-hero">
+            <div class="container">
+                <span class="section-label">HELP CENTER</span>
+                <h1 class="section-title">Frequently Asked Questions</h1>
+                <p>Find answers to common questions about our program, eligibility, and how to get involved.</p>
+            </div>
+        </section>
+
+        <!-- ===== FAQ LIST ===== -->
+        <section class="faq-categories">
+            <div class="container">
+
+                <!-- Category: About the Program -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">About the Program</h2>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq1" class="faq-input" />
+                        <label for="faq1" class="faq-label">What is Heroes?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Heroes is a youth-led social enterprise that addresses unemployment and rural-urban migration in Ghana by equipping young people in Northern Ghana with market-linked, climate-resilient agribusiness skills through a 3-month incubation program.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq2" class="faq-input" />
+                        <label for="faq2" class="faq-label">How long does the program last?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                The program runs for 3 months. Each month focuses on a different phase: Foundation (farming fundamentals), Development (agribusiness skills), and Launch (market access and starter kits).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq3" class="faq-input" />
+                        <label for="faq3" class="faq-label">What are the 5 core components?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Our 5 core components are: (1) Climate-Resilient Farming, (2) Agribusiness &amp; Entrepreneurship, (3) Starter Inputs &amp; Demo Farms, (4) Mentorship &amp; Cooperatives, and (5) Market Linkages. Each component is designed to build practical skills and long-term livelihoods.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq4" class="faq-input" />
+                        <label for="faq4" class="faq-label">Is there a cost to participate?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                No, the program is completely free for selected participants. All training, materials, starter kits, and mentorship are funded through partnerships and supporters.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Eligibility & Application -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">Eligibility &amp; Application</h2>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq5" class="faq-input" />
+                        <label for="faq5" class="faq-label">Who can apply?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                The program is open to youth aged 18–35 in Northern Ghana who are unemployed or underemployed and interested in building a career in agriculture. No prior farming experience is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq6" class="faq-input" />
+                        <label for="faq6" class="faq-label">How do I apply?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                You can apply by reaching out through our contact page or visiting one of our community outreach sessions. Our team will guide you through the application process and answer any questions you have.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq7" class="faq-input" />
+                        <label for="faq7" class="faq-label">How many participants are selected per cohort?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Each cohort trains 40 youth, with a target of 50% women participants. This ensures a balanced and inclusive learning environment.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq8" class="faq-input" />
+                        <label for="faq8" class="faq-label">Do I need farming experience?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                No. The program is designed for beginners. We start with the fundamentals and build up to advanced techniques over the 3-month period.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: After the Program -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">After the Program</h2>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq9" class="faq-input" />
+                        <label for="faq9" class="faq-label">What do graduates receive?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Graduates receive a starter kit containing seeds, tools, and basic irrigation equipment. They also gain access to mentorship, cooperative farming groups, and market connections.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq10" class="faq-input" />
+                        <label for="faq10" class="faq-label">Is there support after graduation?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Yes. Graduates receive monthly mentor check-ins for 6 months, access to cooperative groups, continued market connections, and the opportunity to rejoin future cohorts as peer mentors.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq11" class="faq-input" />
+                        <label for="faq11" class="faq-label">Can I start my own farm after the program?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Absolutely. That's the goal. Many graduates go on to establish their own farms, join cooperatives, or start agribusinesses. Our market linkage component ensures you connect with buyers from day one.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Getting Involved -->
+                <div class="faq-category">
+                    <h2 class="faq-category-title">Getting Involved</h2>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq12" class="faq-input" />
+                        <label for="faq12" class="faq-label">How can I support HTML Heroes?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                You can support us by spreading the word, volunteering as a mentor, or reaching out through our contact page to discuss partnership and funding opportunities.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq13" class="faq-input" />
+                        <label for="faq13" class="faq-label">Can organizations partner with you?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Yes. We welcome partnerships with NGOs, government agencies, private sector organizations, and educational institutions. Visit our contact page to discuss how we can work together.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq14" class="faq-input" />
+                        <label for="faq14" class="faq-label">Where is the program based?</label>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Heroes operates in Northern Ghana, with training sessions and demonstration farms in local communities. Our team travels to reach youth in both rural and peri-urban areas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="faq-cta">
+            <div class="container">
+                <p>Still have questions? We'd love to hear from you.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Heroes</h3>
+                <p>Empowering youth in Northern Ghana with climate-resilient agribusiness skills for sustainable livelihoods.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 Mauritius</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Heroes. All rights reserved.</p>
+            <p class="footer-credits">Breaking the chain of unemployment through agriculture.</p>
+        </div>
+    </footer>
+
+    <script src="darkmode.js?v=2"></script>
+</body>
+</html>
