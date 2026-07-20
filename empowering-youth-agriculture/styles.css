@@ -601,6 +601,310 @@ html, body {
 }
 
 /* ================================================================
+   MISSION PAGE — MODAL TRIGGER BUTTON
+   ================================================================ */
+.mission-modal-btn {
+    margin-top: var(--spacing-lg);
+    cursor: pointer;
+}
+
+/* ================================================================
+   MISSION PAGE — PROGRAM TABLE
+   ================================================================ */
+.program-table-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg);
+}
+
+.program-table-intro {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: -1rem auto 2rem;
+    font-size: 1.05rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--card-border);
+}
+
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    font-size: 0.95rem;
+}
+
+.program-table thead {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.program-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.program-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+}
+
+.program-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.program-table tbody tr:hover {
+    background: rgba(106, 176, 76, 0.04);
+}
+
+.phase-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.phase-1 {
+    background: rgba(106, 176, 76, 0.15);
+    color: var(--primary);
+}
+
+.phase-2 {
+    background: rgba(246, 185, 59, 0.15);
+    color: #b8860b;
+}
+
+.phase-3 {
+    background: rgba(45, 106, 79, 0.15);
+    color: var(--primary-light);
+}
+
+/* ================================================================
+   MISSION PAGE — 5 CORE COMPONENTS
+   ================================================================ */
+.components-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--surface);
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.component-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.component-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.component-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.component-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.component-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.components-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* ================================================================
+   MISSION PAGE — EXPECTED OUTCOMES
+   ================================================================ */
+.outcomes-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg);
+}
+
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.outcome-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+}
+
+.outcome-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.outcome-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ================================================================
+   CSS-ONLY MODAL (checkbox hack)
+   ================================================================ */
+.modal-toggle {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    padding: 1.5rem;
+}
+
+.modal-toggle:checked ~ .modal-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s;
+}
+
+.modal-toggle:checked ~ .modal-overlay .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: rgba(106, 176, 76, 0.1);
+    color: var(--accent);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.modal-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 1.2rem 0 0.4rem;
+}
+
+.modal-body h3:first-child {
+    margin-top: 0;
+}
+
+.modal-body p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0 1rem;
+}
+
+.modal-body ul li {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding: 0.3rem 0 0.3rem 1.4rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.modal-body ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.modal-footer-btn {
+    margin-top: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+/* ================================================================
    FOOTER
    ================================================================ */
 .site-footer {
@@ -848,37 +1152,6 @@ html, body {
     .hero-image-placeholder {
         padding: 0.6rem;
     }
-
-    /* Milestone Section using Flexbox */
-.milestone-section { 
-    padding: 4rem 0; 
-    background-color: var(--bg); 
-}
-
-.milestone-grid {
-    display: flex;             /* Enables Flexbox */
-    flex-wrap: wrap;           /* Allows items to move to the next line on small screens */
-    gap: 2rem;                 /* Creates consistent spacing between cards */
-    justify-content: center;   /* Centers the cards if there's extra space */
-    margin-top: 2rem;
-}
-
-.milestone-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--card-border);
-    
-    /* Flexbox sizing: 
-       flex: 1 1 250px; 
-       1 (grow): cards fill empty space
-       1 (shrink): cards shrink if container is too small
-       250px (basis): preferred starting width
-    */
-    flex: 1 1 250px; 
-    max-width: 300px; /* Prevents cards from getting too wide on desktop */
-}
 
 /* Ensure container handles centering properly */
 .container {
