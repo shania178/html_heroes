@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Feature – CSS-Variable Driven Theme Toggle</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="advanced">
+
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">Heroes</a>
+            <nav class="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <label class="theme-switch" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="feature-hero">
+            <div class="container">
+                <span class="section-label">ADVANCED FEATURE</span>
+                <h1 class="section-title">CSS-Variable Driven Theme Toggle</h1>
+                <p class="feature-hero-desc">
+                    A single checkbox switch reassigns CSS custom properties at the
+                    <code>body</code> level — every component on the page updates
+                    automatically with zero per-element overrides for standard elements.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>1. Define Variables in :root</h3>
+                        <p>
+                            Light-theme values are declared once on <code>:root</code>.
+                            Every component references <code>var(--bg)</code>,
+                            <code>var(--surface)</code>, <code>var(--text)</code>, etc.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>2. Reassign in body.dark-mode</h3>
+                        <p>
+                            When the toggle adds the <code>.dark-mode</code> class,
+                            the same variables are reassigned to dark values.
+                            All components update automatically — no extra selectors needed.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3. Persist with localStorage</h3>
+                        <p>
+                            The user's preference is saved in <code>localStorage</code>
+                            and restored on page load, so the theme survives navigation
+                            and browser restarts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LIVE DEMO ===== -->
+        <section class="feature-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="demo-panel">
+                    <h2>Live Variable Inspector</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                        Toggle the switch above to watch these values change in real time.
+                    </p>
+
+                    <table class="var-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Current Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>--bg</td>
+                                <td><span class="color-swatch" style="background: var(--bg);"></span> var(--bg)</td>
+                            </tr>
+                            <tr>
+                                <td>--surface</td>
+                                <td><span class="color-swatch" style="background: var(--surface);"></span> var(--surface)</td>
+                            </tr>
+                            <tr>
+                                <td>--text</td>
+                                <td><span class="color-swatch" style="background: var(--text);"></span> var(--text)</td>
+                            </tr>
+                            <tr>
+                                <td>--accent</td>
+                                <td><span class="color-swatch" style="background: var(--accent);"></span> var(--accent)</td>
+                            </tr>
+                            <tr>
+                                <td>--gold</td>
+                                <td><span class="color-swatch" style="background: var(--gold);"></span> var(--gold)</td>
+                            </tr>
+                            <tr>
+                                <td>--card-bg</td>
+                                <td><span class="color-swatch" style="background: var(--card-bg);"></span> var(--card-bg)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="toggle-demo-area">
+                        <p>This box uses <code>var(--bg)</code> and <code>var(--border)</code> — it adapts automatically.</p>
+                        <label class="theme-switch" for="theme-toggle-2">
+                            <input type="checkbox" id="theme-toggle-2" />
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="code-block"><span class="cmt">/* Light mode — :root */</span>
+<span class="sel">:root</span> {
+  <span class="kw">--bg</span>:      <span class="val">#f0f7ee</span>;
+  <span class="kw">--surface</span>: <span class="val">#ffffff</span>;
+  <span class="kw">--text</span>:    <span class="val">#1a2a1a</span>;
+}
+
+<span class="cmt">/* Dark mode — same variables, new values */</span>
+<span class="sel">body.dark-mode</span> {
+  <span class="kw">--bg</span>:      <span class="val">#111c11</span>;
+  <span class="kw">--surface</span>: <span class="val">#1c3021</span>;
+  <span class="kw">--text</span>:    <span class="val">#ecf2e9</span>;
+}</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Heroes</h3>
+                <p>Empowering youth in Northern Ghana with climate-resilient agribusiness skills for sustainable livelihoods.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 Mauritius</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Heroes. All rights reserved.</p>
+            <p class="footer-credits">Breaking the chain of unemployment through agriculture.</p>
+        </div>
+    </footer>
+
+    <script src="darkmode.js"></script>
+    <script>
+        const toggle2 = document.getElementById("theme-toggle-2");
+        if (toggle2) {
+            if (document.body.classList.contains("dark-mode")) toggle2.checked = true;
+            toggle2.addEventListener("change", () => {
+                if (toggle2.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("theme", "light");
+                }
+                const navToggle = document.getElementById("theme-toggle");
+                if (navToggle) navToggle.checked = toggle2.checked;
+            });
+        }
+    </script>
+</body>
+</html>

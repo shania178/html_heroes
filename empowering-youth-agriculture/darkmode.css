@@ -1,0 +1,174 @@
+/* ================================================================
+   TOGGLE SWITCH
+   ================================================================ */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 26px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.switch-slider::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch input:checked + .switch-slider {
+    background: var(--primary-dark);
+    border-color: var(--accent);
+}
+
+.theme-switch input:checked + .switch-slider::before {
+    transform: translateX(22px);
+}
+
+body.dark-mode .theme-switch .switch-slider {
+    background: #1c3021;
+    border-color: var(--accent);
+}
+
+body.dark-mode .theme-switch .switch-slider::before {
+    background: var(--gold);
+}
+
+/* ================================================================
+   DARK MODE – CSS-VARIABLE DRIVEN
+   Reassigns theme variables so every component updates automatically.
+   ================================================================ */
+body.dark-mode {
+    --bg:            #111c11;
+    --surface:       #141f17;
+    --text:          #ecf2e9;
+    --text-muted:    #c5d9c0;
+    --border:        rgba(106, 176, 76, 0.15);
+    --shadow:        0 12px 40px rgba(0, 0, 0, 0.35);
+    --shadow-hover:  0 20px 60px rgba(0, 0, 0, 0.5);
+    --header-bg:     rgba(12, 35, 16, 0.92);
+    --header-border: rgba(255, 255, 255, 0.06);
+    --card-bg:       #1c3021;
+    --card-border:   #2a4a30;
+    --hero-gradient: linear-gradient(145deg, #102916 0%, #173b24 35%, #1f5c37 70%, #2c7c4b 100%);
+    --cta-gradient:  linear-gradient(145deg, #0e1a14, #132118);
+}
+
+/* Accent / gold stay vivid in dark mode */
+body.dark-mode {
+    --accent:        #8bc66a;
+    --accent-light:  #a7d2a0;
+    --accent-lighter: #d4edc9;
+    --gold:          #f6b93b;
+    --primary:       #a7d2a0;
+    --primary-light: #c5e8c0;
+    --primary-dark:  #e0f5dc;
+}
+
+/* Page-specific overrides that can't be covered by variables alone */
+body.dark-mode .site-footer {
+    background-color: #0e140e;
+}
+
+body.dark-mode a {
+    color: #cfe9d0;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #5f9f65;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #b4d9b0;
+    color: #b4d9b0;
+}
+
+body.dark-mode .cta-section h2,
+body.dark-mode .cta-section p {
+    color: #f4fbf0;
+}
+
+body.dark-mode .section-title {
+    color: #f4fbf0;
+}
+
+body.dark-mode .section-label {
+    color: #a7d2a0;
+}
+
+body.dark-mode .mission-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .mission-card h2 {
+    color: #a7d2a0;
+}
+
+body.dark-mode .mission-card p {
+    color: #c5d9c0;
+}
+
+body.dark-mode .problem-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .problem-card h3 {
+    color: #e6f0e2;
+}
+
+body.dark-mode .problem-card p {
+    color: #a7d2a0;
+}
+
+body.dark-mode .solution-card {
+    background-color: #1c3021;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .solution-card h3 {
+    color: #a7d2a0;
+}
+
+body.dark-mode .solution-card ul li {
+    color: #c5d9c0;
+}
+
+body.dark-mode .section-header p {
+    color: #a7d2a0;
+}
+
+body.dark-mode .team-name {
+    color: #a7d2a0;
+}
+
+body.dark-mode .gallery-img {
+    background-color: #141f17;
+    border-color: #2a4a30;
+}
+
+body.dark-mode .gallery-overlay {
+    background: linear-gradient(to top, rgba(14, 26, 18, 0.92) 0%, rgba(14, 26, 18, 0.4) 50%, transparent 100%);
+}
