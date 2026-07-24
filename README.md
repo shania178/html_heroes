@@ -61,27 +61,26 @@ This multi-page, responsive website serves as the digital platform for Heroes, c
 
 ---
 
-## Project Structure
 heroes/
-├── index.html # Home page with hero section
-├── about.html # Mission, problem, solution, team, skills dashboard
-├── mission.html # Program table, 5 core components, CSS-only modal
-├── contact.html # Contact form with regex validation
-├── team.html # Team gallery with professional biographies
-├── faq.html # CSS-only accordion FAQ
-├── advancedfeature.html # Dark mode theme toggle with live inspector
-├── styles.css # Main stylesheet (variables, layout, responsive)
-├── darkmode.css # Dark mode overrides and toggle styling
-├── darkmode.js # localStorage theme persistence
-├── main.js # Mobile menu toggle
-├── pics/ # Image assets
-│ ├── farming.jpg
-│ ├── tm.png
-│ ├── debbie.jpeg
-│ ├── nwandoo.jpeg
-│ ├── patience.jpeg
-│ └── mypicture.jpeg
-└── README.md # This file
+├── index.html
+├── about.html
+├── mission.html
+├── contact.html
+├── team.html
+├── faq.html
+├── advancedfeature.html
+├── styles.css
+├── darkmode.css
+├── darkmode.js
+├── main.js
+├── pics/
+│   ├── farming.jpg
+│   ├── tm.png
+│   ├── debbie.jpeg
+│   ├── nwandoo.jpeg
+│   ├── patience.jpeg
+│   └── mypicture.jpeg
+└── README.md
 
 
 ---
