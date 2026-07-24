@@ -65,8 +65,7 @@ This multi-page, responsive website serves as the digital platform for Heroes, c
 ## Setup & Installation
 
 ### 1. Clone the Repository
-
-```bash
+bash
 git clone https://github.com/your-username/heroes.git
 cd heroes
 
@@ -102,10 +101,10 @@ Phone: Validates international format (^\+?[0-9]{8,15}$).
 
 Reference Code: Validates custom pattern (^[A-Za-z]+_[0-9]{4}$).
 
-Real-time validation feedback with :valid / :invalid pseudo-classes.
+Real-time validation feedback with :valid and :invalid pseudo-classes.
 
 FAQ Accordion
-Click any question to expand/collapse the answer.
+Click any question to expand or collapse the answer.
 
 CSS-only implementation using the checkbox hack.
 
@@ -114,7 +113,6 @@ Click "Learn More About Our Program" or "View Full Program Details" to open a mo
 
 CSS-only modal using the checkbox hack.
 
---
 
 Acknowledgments and Sources
 Sources
@@ -136,18 +134,18 @@ Optimizing regular expressions for form validation
 All code represents our own individual authorship and understanding. AI interactions were logged and referenced in accordance with APA 7th Edition guidelines.
 
 Third-Party Code
-No third-party code or boilerplate was used in this project. All HTML, CSS, and JavaScript were written from scratch.
+No third-party code or boilerplate was used in this project. 
 
 Authors
-Thierry
+- Thierry
 
-Debbie
+- Debbie
 
-Nwando
+- Nwando
 
-Patience
+- Patience
 
-Shania
+- Shania
 
 Course: BSc Software Engineering, Year 1
 Module: Frontend Web Development – June to October 2026
@@ -155,4 +153,3 @@ Faculty: Chris Bergue
 
 License
 This project was created for educational purposes as part of the BSc Software Engineering programme at African Leadership College of Higher Education.
-
