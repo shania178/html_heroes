@@ -1,81 +1,99 @@
-Heroes – Empowering Youth Through Agribusiness
-A responsive, mission-driven website built for the BSc Software Engineering Frontend Web Development module.
+# Heroes – Empowering Youth Through Agribusiness
 
-Table of Contents
-Overview
+> A responsive, mission-driven website built for the BSc Software Engineering Frontend Web Development module.
 
-Live Demo
+---
 
-Features
+## Table of Contents
 
-Technologies Used
+- [Overview](#overview)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Setup & Installation](#setup--installation)
+- [Usage Guide](#usage-guide)
+- [Rubric Alignment](#rubric-alignment)
+- [Acknowledgments & Sources](#acknowledgments--sources)
+- [Author](#author)
 
-Project Structure
+---
 
-Setup & Installation
+## Overview
 
-Usage Guide
+**Heroes** is a youth-led social enterprise addressing youth unemployment and rural–urban migration in Ghana by equipping young people in Northern Ghana with market-linked, climate-resilient agribusiness skills.
 
-Rubric Alignment
+This multi-page, responsive website serves as the digital platform for Heroes, communicating its mission, program structure, team, and impact. The project demonstrates foundational frontend engineering skills including semantic HTML5, modern CSS layouts (Flexbox & Grid), client-side form validation, and a CSS-variable-driven dark mode theme toggle.
 
-Acknowledgments & Sources
+---
 
-Author
+## Live Demo
 
-Overview
-Heroes is a youth-led social enterprise addressing youth unemployment and rural-urban migration in Ghana by equipping young people in Northern Ghana with market-linked, climate-resilient agribusiness skills.
+**View the live site:** [https://your-username.github.io/heroes/](https://your-username.github.io/heroes/) *(Replace with your actual GitHub Pages URL)*
 
-This multi-page, responsive website serves as the digital platform for Heroes, communicating its mission, program structure, team, and impact. The project demonstrates foundational frontend engineering skills including semantic HTML5, modern CSS layouts (Flexbox and Grid), client-side form validation, and a CSS-variable-driven dark mode theme toggle.
+---
 
-Live Demo
-View the live site: https://your-username.github.io/heroes/
+## Features
 
-Features
-Feature	Description
-Home Page	Hero section with mission statement, stats, and call-to-action
-About Page	Mission statement, problem breakdown, solution approach, team gallery (3+2 layout), and skills dashboard
-Mission Page	Program phases table, 5 core components grid, CSS-only modal with detailed program information
-Team Page	Professional biographies with hover-reveal overlays
-Contact Page	Semantic form with real-time validation using regex patterns
-FAQ Page	CSS-only accordion with 4 categories and 14 questions
-Advanced Feature	CSS-variable-driven Light/Dark theme toggle with live variable inspector
-Dark Mode	Persistent theme preference using localStorage
-Responsive Design	Fully responsive across mobile, tablet, and desktop viewports
-Technologies Used
-Technology	Purpose
-HTML5	Semantic markup for all pages
-CSS3	Custom properties (variables), Flexbox, CSS Grid, media queries
-JavaScript	Dark mode persistence (localStorage), mobile menu toggle
-Font Awesome	Icons for problem cards and social elements
-GitHub Pages	Deployment and hosting
+| Feature | Description |
+|---------|-------------|
+| ** Home Page** | Hero section with mission statement, stats, and call-to-action |
+| ** About Page** | Mission statement, problem breakdown, solution approach, team gallery (3+2 layout), and skills dashboard |
+| ** Mission Page** | Program phases table, 5 core components grid, CSS-only modal with detailed program info |
+| ** Team Page** | Professional biographies with hover-reveal overlays |
+| ** Contact Page** | Semantic form with real-time validation using regex patterns (`^\+?[0-9]{8,15}$` and `^[A-Za-z]+_[0-9]{4}$`) |
+| ** FAQ Page** | CSS-only accordion with 4 categories and 14 questions |
+| ** Advanced Feature** | CSS-variable-driven Light/Dark theme toggle with live variable inspector |
+| ** Dark Mode** | Persistent theme preference using `localStorage` |
+| ** Responsive** | Fully responsive across mobile, tablet, and desktop viewports |
 
+---
+
+## Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **HTML5** | Semantic markup for all pages |
+| **CSS3** | Custom properties (variables), Flexbox, CSS Grid, media queries |
+| **JavaScript** | Dark mode persistence (`localStorage`), mobile menu toggle |
+| **Font Awesome** | Icons for problem cards and social elements |
+| **GitHub Pages** | Deployment and hosting |
+
+---
+
+## Project Structure
 heroes/
-├── index.html              # Home page with hero section
-├── about.html              # Mission, problem, solution, team, skills dashboard
-├── mission.html            # Program table, 5 core components, CSS-only modal
-├── contact.html            # Contact form with regex validation
-├── team.html               # Team gallery with professional biographies
-├── faq.html                # CSS-only accordion FAQ
-├── advancedfeature.html    # Dark mode theme toggle with live inspector
-├── styles.css              # Main stylesheet (variables, layout, responsive)
-├── darkmode.css            # Dark mode overrides and toggle styling
-├── darkmode.js             # localStorage theme persistence
-├── main.js                 # Mobile menu toggle
-├── pics/                   # Image assets
-│   ├── farming.jpg
-│   ├── tm.png
-│   ├── debbie.jpeg
-│   ├── nwandoo.jpeg
-│   ├── patience.jpeg
-│   └── mypicture.jpeg
-└── README.md               # This file
+├── index.html # Home page with hero section
+├── about.html # Mission, problem, solution, team, skills dashboard
+├── mission.html # Program table, 5 core components, CSS-only modal
+├── contact.html # Contact form with regex validation
+├── team.html # Team gallery with professional biographies
+├── faq.html # CSS-only accordion FAQ
+├── advancedfeature.html # Dark mode theme toggle with live inspector
+├── styles.css # Main stylesheet (variables, layout, responsive)
+├── darkmode.css # Dark mode overrides and toggle styling
+├── darkmode.js # localStorage theme persistence
+├── main.js # Mobile menu toggle
+├── pics/ # Image assets
+│ ├── farming.jpg
+│ ├── tm.png
+│ ├── debbie.jpeg
+│ ├── nwandoo.jpeg
+│ ├── patience.jpeg
+│ └── mypicture.jpeg
+└── README.md # This file
 
 
-Setup and Installation
-1. Clone the Repository
-bash
+---
+
+## Setup & Installation
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/your-username/heroes.git
 cd heroes
+
 2. Open in Browser
 Simply open any .html file in your preferred browser. No build tools or dependencies are required.
 
@@ -108,10 +126,10 @@ Phone: Validates international format (^\+?[0-9]{8,15}$).
 
 Reference Code: Validates custom pattern (^[A-Za-z]+_[0-9]{4}$).
 
-Real-time validation feedback with :valid and :invalid pseudo-classes.
+Real-time validation feedback with :valid / :invalid pseudo-classes.
 
 FAQ Accordion
-Click any question to expand or collapse the answer.
+Click any question to expand/collapse the answer.
 
 CSS-only implementation using the checkbox hack.
 
@@ -119,4 +137,5 @@ Program Modal (Mission Page)
 Click "Learn More About Our Program" or "View Full Program Details" to open a modal.
 
 CSS-only modal using the checkbox hack.
+
 
