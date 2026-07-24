@@ -313,13 +313,13 @@ html, body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 1.5rem;
-    border-radius: 50px;
+    border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     transition: all 0.4s ease;
     display: inline-block;
     width: 100%;
-    max-width: 800px;
+    max-width: 480px;
 }
 
 .hero-image-placeholder:hover {
@@ -329,39 +329,11 @@ html, body {
 }
 
 .hero-image-placeholder img,
-.hero-image-placeholder svg 
-.hero-image-placeholder video{
+.hero-image-placeholder svg {
     display: block;
-    width: auto;
-    height: auto;
-    object-fit: fill;
-    border-radius: 16px;
-
-}
-.hero-video-box {
     width: 100%;
-    display: block;
-}
-
-.unmute-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 40px;
-    font-weight: 600;
-    cursor: pointer;
-    display: none; /* Hidden until needed */
-    z-index: 10;
-    transition: 0.3s;
-}
-
-.unmute-btn:hover {
-    background: #1a4a2a;
-    transform: scale(1.05);
+    height: auto;
+    border-radius: 16px;
 }
 
 .hero-caption {
@@ -372,7 +344,7 @@ html, body {
     font-size: 1rem;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
-    padding: 0.1rem 50px;
+    padding: 0.4rem 1.8rem;
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
