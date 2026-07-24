@@ -1261,7 +1261,7 @@ html, body {
 }
 
 /* ================================================================
-   CONTACT PAGE — COMPLETE
+   CONTACT PAGE 
    ================================================================ */
 
 .contact-section {
@@ -1435,7 +1435,7 @@ html, body {
 }
 
 /* ================================================================
-   NATIVE :valid / :invalid PSEUDO-CLASSES (Rubric Requirement)
+   NATIVE :valid / :invalid PSEUDO-CLASSES 
    ================================================================ */
 input:valid,
 select:valid,
@@ -1475,7 +1475,7 @@ body.dark-mode textarea:invalid {
 }
 
 /* ================================================================
-   CONTACT PAGE — (Same approach as Team page)
+   CONTACT PAGE 
    ================================================================ */
 
 .contact-section {
