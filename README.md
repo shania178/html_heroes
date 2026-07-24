@@ -114,4 +114,45 @@ Click "Learn More About Our Program" or "View Full Program Details" to open a mo
 
 CSS-only modal using the checkbox hack.
 
+--
+
+Acknowledgments and Sources
+Sources
+Font Awesome – Icons used throughout the site. fontawesome.com
+
+Google Fonts – System font stack with 'Segoe UI' fallback.
+
+Images – All images are original assets created for this project.
+
+AI Disclosure
+This project was developed as a group assessment for the BSc Software Engineering – Frontend Web Development module. Generative AI tools were used as supplementary learning aids for:
+
+Explaining CSS Grid and Flexbox layout concepts
+
+Debugging layout overflow issues
+
+Optimizing regular expressions for form validation
+
+All code represents our own individual authorship and understanding. AI interactions were logged and referenced in accordance with APA 7th Edition guidelines.
+
+Third-Party Code
+No third-party code or boilerplate was used in this project. All HTML, CSS, and JavaScript were written from scratch.
+
+Authors
+Thierry
+
+Debbie
+
+Nwando
+
+Patience
+
+Shania
+
+Course: BSc Software Engineering, Year 1
+Module: Frontend Web Development – June to October 2026
+Faculty: Chris Bergue
+
+License
+This project was created for educational purposes as part of the BSc Software Engineering programme at African Leadership College of Higher Education.
 
