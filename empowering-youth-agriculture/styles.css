@@ -11,7 +11,7 @@
     --accent-lighter: #d4edc9;
     --gold:          #f6b93b;
     --white:         #4ba35a;
-    /* ===== ADD THESE TWO LINES ===== */
+   
     --heading-label:   var(--accent);
     --heading-title:   var(--primary-light);
 
@@ -1435,6 +1435,46 @@ html, body {
 }
 
 /* ================================================================
+   NATIVE :valid / :invalid PSEUDO-CLASSES (Rubric Requirement)
+   ================================================================ */
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: #1e7a4a !important;
+    background-color: #f0faf4 !important;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: #d32f2f !important;
+    background-color: #fdf0ef !important;
+}
+
+/* Style for required fields that are empty */
+input:required:invalid,
+select:required:invalid,
+textarea:required:invalid {
+    border-color: #d32f2f !important;
+    border-width: 2px !important;
+}
+
+/* Dark mode support for pseudo-classes */
+body.dark-mode input:valid,
+body.dark-mode select:valid,
+body.dark-mode textarea:valid {
+    background-color: #1a2e1a !important;
+    border-color: #4caf50 !important;
+}
+
+body.dark-mode input:invalid,
+body.dark-mode select:invalid,
+body.dark-mode textarea:invalid {
+    background-color: #2a1a1a !important;
+    border-color: #ef5350 !important;
+}
+
+/* ================================================================
    CONTACT PAGE — (Same approach as Team page)
    ================================================================ */
 
@@ -2282,4 +2322,78 @@ body.dark-mode .hero-description {
 body.dark-mode .hero-badge {
     background: rgba(255, 255, 255, 0.15);
     color: #ffffff;
+}
+
+/* ================================================================
+   SKILLS DASHBOARD
+   ================================================================ */
+.skills-dashboard {
+    padding: 4rem 0;
+    background: var(--bg);
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2.5rem;
+    max-width: 700px;
+    margin: 2rem auto 0;
+}
+
+.skill-item {
+    background: var(--card-bg);
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.skill-item span {
+    display: block;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.skill-bar {
+    background: var(--border);
+    border-radius: 40px;
+    overflow: hidden;
+    height: 26px;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.skill-bar div {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: width 0.8s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .skill-bar div {
+    background: #5f9f65;
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
