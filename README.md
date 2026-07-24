@@ -69,10 +69,10 @@ bash
 git clone https://github.com/your-username/heroes.git
 cd heroes
 
-2. Open in Browser
+### 2. Open in Browser
 Simply open any .html file in your preferred browser. No build tools or dependencies are required.
 
-3. (Optional) Deploy to GitHub Pages
+### 3. (Optional) Deploy to GitHub Pages
 Go to your repository on GitHub.
 
 Navigate to Settings → Pages.
@@ -81,62 +81,66 @@ Under "Branch," select main and save.
 
 Your site will be available at https://your-username.github.io/heroes/.
 
-Usage Guide
-Navigation
-Persistent navigation bar across all pages with active state highlighting.
+### Usage Guide
 
-Mobile menu toggle collapses navigation on smaller screens.
+### Navigation
+- Persistent navigation bar across all pages with active state highlighting.
 
-Dark Mode
-Toggle the switch in the navigation bar to switch between light and dark themes.
+- Mobile menu toggle collapses navigation on smaller screens.
 
-Preference is saved to localStorage and persists across pages and browser sessions.
+### Dark Mode
+- Toggle the switch in the navigation bar to switch between light and dark themes.
 
-Contact Form
-Full Name: Required text field.
+- Preference is saved to localStorage and persists across pages and browser sessions.
 
-Email: Validates email format using regex.
+###  Contact Form
 
-Phone: Validates international format (^\+?[0-9]{8,15}$).
+- Full Name: Required text field.
 
-Reference Code: Validates custom pattern (^[A-Za-z]+_[0-9]{4}$).
+- Email: Validates email format using regex.
 
-Real-time validation feedback with :valid and :invalid pseudo-classes.
+- Phone: Validates international format (^\+?[0-9]{8,15}$).
 
-FAQ Accordion
-Click any question to expand or collapse the answer.
+- Reference Code: Validates custom pattern (^[A-Za-z]+_[0-9]{4}$).
 
-CSS-only implementation using the checkbox hack.
+- Real-time validation feedback with :valid and :invalid pseudo-classes.
 
-Program Modal (Mission Page)
-Click "Learn More About Our Program" or "View Full Program Details" to open a modal.
+### FAQ Accordion
+- Click any question to expand or collapse the answer.
 
-CSS-only modal using the checkbox hack.
+- CSS-only implementation using the checkbox hack.
+
+### Program Modal (Mission Page)
+
+- Click "Learn More About Our Program" or "View Full Program Details" to open a modal.
+
+- CSS-only modal using the checkbox hack.
 
 
-Acknowledgments and Sources
-Sources
-Font Awesome – Icons used throughout the site. fontawesome.com
+### Acknowledgments and Sources
 
-Google Fonts – System font stack with 'Segoe UI' fallback.
+### Sources
+- Font Awesome – Icons used throughout the site. fontawesome.com
 
-Images – All images are original assets created for this project.
+- Google Fonts – System font stack with 'Segoe UI' fallback.
 
-AI Disclosure
+- Images – All images are original assets created for this project.
+
+### AI Disclosure
 This project was developed as a group assessment for the BSc Software Engineering – Frontend Web Development module. Generative AI tools were used as supplementary learning aids for:
 
-Explaining CSS Grid and Flexbox layout concepts
+- Explaining CSS Grid and Flexbox layout concepts
 
-Debugging layout overflow issues
+- Debugging layout overflow issues
 
-Optimizing regular expressions for form validation
+- Optimizing regular expressions for form validation
 
 All code represents our own individual authorship and understanding. AI interactions were logged and referenced in accordance with APA 7th Edition guidelines.
 
-Third-Party Code
+### Third-Party Code
 No third-party code or boilerplate was used in this project. 
 
-Authors
+### Authors
 - Thierry
 
 - Debbie
@@ -151,5 +155,5 @@ Course: BSc Software Engineering, Year 1
 Module: Frontend Web Development – June to October 2026
 Faculty: Chris Bergue
 
-License
+### License
 This project was created for educational purposes as part of the BSc Software Engineering programme at African Leadership College of Higher Education.
