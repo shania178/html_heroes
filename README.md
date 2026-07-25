@@ -37,12 +37,12 @@ This multi-page, responsive website serves as the digital platform for Heroes, c
 
 | Feature | Description |
 |---------|-------------|
-| ** Home Page | Hero section with mission statement, stats, and call-to-action |
-| ** About Page | Mission statement, problem breakdown, solution approach, team gallery (3+2 layout), and skills dashboard |
-| ** Mission Page | Program phases table, 5 core components grid, CSS-only modal with detailed program info |
-| ** Team Page | Professional biographies with hover-reveal overlays |
-| ** Contact Page | Semantic form with real-time validation using regex patterns (`^\+?[0-9]{8,15}$` and `^[A-Za-z]+_[0-9]{4}$`) |
-| ** FAQ Page | CSS-only accordion with 4 categories and 14 questions |
+|  Home Page | Hero section with mission statement, stats, and call-to-action |
+|  About Page | Mission statement, problem breakdown, solution approach, team gallery (3+2 layout), and skills dashboard |
+|  Mission Page | Program phases table, 5 core components grid, CSS-only modal with detailed program info |
+|  Team Page | Professional biographies with hover-reveal overlays |
+|  Contact Page | Semantic form with real-time validation using regex patterns (`^\+?[0-9]{8,15}$` and `^[A-Za-z]+_[0-9]{4}$`) |
+|  FAQ Page | CSS-only accordion with 4 categories and 14 questions |
 |  Advanced Feature | CSS-variable-driven Light/Dark theme toggle with live variable inspector |
 |  Dark Mode | Persistent theme preference using `localStorage` |
 |  Responsive | Fully responsive across mobile, tablet, and desktop viewports |
